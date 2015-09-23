@@ -1,0 +1,61 @@
+
+*|LIST:COMPANY|*
+
+====================
+
+Invoice #051 Mar 15 2014
+
+* Client
+  Connie S. Smythe
+  Eisner Food Store
+  753 Lakeland Terrace
+  Southfield, MI 48075
+  USA
+
+* Please send paymen to
+  V.A.T. Reg #: 123456
+  Account Name: SimpleApp Ltd.
+  Account #: 123456789
+  IBAN: US89370400440532013000
+  SWIFT: XETYUS66
+  4170 Haymond St., Mcdermitt, PA 18503 USA
+
+____________________
+
+Project Name
+____________________
+
+* Interaction Design 
+  Design compositions (based on client wireframe)
+  One round of changes
+  Quantity: 1
+  Subtotal: $600
+
+* HTML/CSS
+  Quantity: 2
+  Subtotal: $400
+____________________
+
+Subtotal: $1,400
+Deposit: $400
+____________________
+
+Total due by Sep 10, 2014
+$1,000
+____________________
+
+* Contact Us	
+  http://bit.ly/1yZ3CWY
+
+* Download Invoice	
+  http://bit.ly/1yZ3CWY
+
+====================
+
+Notification Options
+*|UPDATE_PROFILE|*
+
+Unsubscribe - *|EMAIL|*
+*|UNSUB|*
+
+*|IF:REWARDS|* *|REWARDS|* *|END:IF|*

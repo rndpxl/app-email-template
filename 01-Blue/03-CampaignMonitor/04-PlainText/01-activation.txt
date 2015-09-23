@@ -1,0 +1,27 @@
+
+SimpleApp
+
+====================
+
+Welcome to SimpleApp
+Ronald Jacobs
+15 Mar, 2014
+____________________
+
+You are ready to setup your new SimpleApp account.
+
+* Click the link below to activate yout account
+  http://bit.ly/1yZ3CWY
+
+Cancel subscription request
+http://bit.ly/1yZ3CWY
+
+====================
+
+Notification Options
+*|UPDATE_PROFILE|*
+
+Unsubscribe - *|EMAIL|*
+*|UNSUB|*
+
+*|IF:REWARDS|* *|REWARDS|* *|END:IF|*

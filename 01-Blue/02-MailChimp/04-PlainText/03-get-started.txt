@@ -1,0 +1,30 @@
+
+*|LIST:COMPANY|*
+
+====================
+
+Getting started
+
+A quick introductory video to SimpleApp
+http://bit.ly/1yZ3CWY
+____________________
+
+New: Import data to your account
+We have created a special video tutorial to help you easily import your data. We will take you through data structure, deployment setup and data export.
+http://bit.ly/1yZ3CWY
+
+____________________
+
+Article: Get inspired
+Some of our customers use SimpleApp in their own unique style. We have put together a list showcasing some of the best practices.
+http://bit.ly/1yZ3CWY
+
+====================
+
+Notification Options
+*|UPDATE_PROFILE|*
+
+Unsubscribe - *|EMAIL|*
+*|UNSUB|*
+
+*|IF:REWARDS|* *|REWARDS|* *|END:IF|*

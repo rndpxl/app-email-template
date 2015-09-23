@@ -1,0 +1,14 @@
+{{ shop.name }}
+{{ shop.url }}
+
+====================
+
+Account Activation
+
+{% if customer.name %}Dear {{ customer.name }},{% endif %}
+An account has been created for you at the shop {{ shop.name }}.
+
+Please click the link to activate your account and set your password.
+{{ customer.account_activation_url }}
+
+If the account was created in error, you can visit the link above and select "Decline" to decline this invitation.

@@ -1,0 +1,51 @@
+
+*|LIST:COMPANY|*
+
+====================
+
+Sue J. Barreras
+15 Mar, 2014
+
+
+Hey Michael,
+
+I saw that you are looking for a PHP developer for your project and I would like to offer my experities.
+
+I've worked on simmilar project in the past and I think my skills would be of great help. You can check out some of my work here http://bit.ly/1lA4au9.
+
+Hope to hear from you soon!
+Sue
+
+____________________
+
+
+Michael Richards
+15 Mar, 2014
+
+
+Hello Sue,
+
+Thank you for getting in touch with me. I took a look over your resume and I am very impressed. I would be trilled to have you on board.
+
+Let me know what information you would need in orther to set up your rates.
+
+All the best,
+Mike
+
+____________________
+
+* Reply 
+  http://bit.ly/1yZ3CWY
+
+* Delete 
+  http://bit.ly/1yZ3CWY
+
+====================
+
+Notification Options
+*|UPDATE_PROFILE|*
+
+Unsubscribe - *|EMAIL|*
+*|UNSUB|*
+
+*|IF:REWARDS|* *|REWARDS|* *|END:IF|*

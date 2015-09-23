@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="format-detection" content="address=no;email=no;telephone=no" />
+<title>Gift Card Notification</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<div class="emailSummary">Gift Card Notification</div>
+<table id="emailBody" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top" class="emailBodyCell"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="eBox">
+        <tr>
+          <td class="eHeader_stretch">&nbsp;</td>
+          <td class="eHeader"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="eHeaderLogo"><a class="logo" href="{{ shop.url }}"><img class="imageFix" src="{{ 'logo.png' | asset_url }}" alt="{{ shop_name }}" height="48" /></a></td>
+                <!-- end .eHeaderLogo--> 
+              </tr>
+            </table></td>
+          <td class="eHeader_stretch">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="highlight_stretch">&nbsp;</td>
+          <td class="highlight pdTp32 pdBt16"><h1><span>{{ gift_card.initial_value | money_without_trailing_zeros }} Gift Card</span></h1></td>
+          <td class="highlight_stretch">&nbsp;</td>
+          <!-- end .highlight--> 
+        </tr>
+        <tr>
+          <td class="eBody_stretch">&nbsp;</td>
+          <td class="eBody alignLeft"><p>Hi{% if gift_card.customer %} {{ gift_card.customer.first_name }}{% endif %},</p>
+            <p>Here is your <a href="{{ shop.url }}"><span>{{ shop.name }}</span></a> gift card for {{ gift_card.initial_value | money_without_trailing_zeros }}.</p>
+            {% if gift_card.initial_value != gift_card.balance %}
+            <p>You have {{ gift_card.balance | money_without_trailing_zeros }} left on this gift card.</p>
+            {% endif %}<table border="0" cellpadding="0" cellspacing="0" class="defaultBtn">
+              <tr>
+                <td width="4" height="8"  align="left" valign="top" class="btnLfTp"><img src="images/mainBtn_lftp.png" width="4" height="4" /></td>
+                <td class="emptyCell">&nbsp;</td>
+                <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/mainBtn_rgtp.png" width="4" height="4" /></td>
+              </tr>
+              <tr>
+                <td class="emptyCell">&nbsp;</td>
+                <td class="btnMain"><a href="{{ customer.reset_password_url }}"><span>View or Print Your Gift Card</span></a></td>
+                <td class="emptyCell">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="bottom" class="btnLfBt"><img src="images/mainBtn_lfbt.png" width="4" height="4" /></td>
+                <td class="emptyCell">&nbsp;</td>
+                <td align="right" valign="bottom" class="btnRgBt"><img src="images/mainBtn_rgbt.png" width="4" height="4" /></td>
+              </tr>
+            </table>
+        <p></p><p>Purchased this gift card for someone else? Feel free to forward them this email.</p>
+            <p>Thank you for shopping at <a href="{{ shop.url }}"><span>{{ shop.name }}</span></a>!</p></td>
+          <td class="eBody_stretch">&nbsp;</td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="eBody_stretch">&nbsp;</td>
+          <td class="bottomCorners">&nbsp;</td>
+          <td class="eBody_stretch">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="eFooter_stretch">&nbsp;</td>
+          <td class="eFooter">© 2015 {{ shop.name }}. All Rights Reserved.</td>
+          <td class="eFooter_stretch">&nbsp;</td>
+        </tr>
+      </table>
+      
+      <!-- end .eBox --></td>
+    <!-- end .emailBodyCell --> 
+  </tr>
+</table>
+<!-- end #emailBody -->
+</body>
+</html>

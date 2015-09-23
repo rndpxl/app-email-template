@@ -1,0 +1,34 @@
+{{ shop.name }}
+{{ shop.url }}
+
+====================
+
+Order {{ name }} placed by {{ billing_address.name }}{% if has_high_risks? %} (Risk of fraud){% endif %}
+
+Hello {{ shop_name }},
+{% if customer.name %}{{ customer.name }}{% else %}Someone{% endif %} placed a new order with you today, {{ date | date: "%b %d %I:%M%p" }}:
+
+____________________{% for line in line_items %}
+
+* {{ line.title }}
+  Quantity: {{ line.quantity }}
+  Price: {{ line.price | money }}
+  Subtotal: {{ line.line_price | money }}
+____________________{% endfor %}{% if fulfillment_aborted %}
+The above order was not automatically fulfilled because it was flagged as suspicious.{% endif %}
+{% if has_high_risks? %}** Security check
+   This order has a risk of being fraudulent. Review the order in your store's admin and contact the customer to verify their information.{% endif %}
+
+* Payment processing method{% if gateway %} 
+  {{ gateway }} {% else %}
+{% for tx_gateway in unique_gateways %} {{ tx_gateway }}{% endfor %}{% endif %}
+  
+{% if requires_shipping and shipping_address %}* Delivery method{% for shipping_method in shipping_methods %}
+  {{ shipping_method.title }}{% endfor %}
+  
+* Shipping address
+  {{ shipping_address.name }}
+  {{ shipping_address.street }}
+  {{ shipping_address.city }}, {{ shipping_address.province }}  {{ shipping_address.zip }}
+  {{ shipping_address.country }}
+  {{ shipping_address.phone }}{% endif %}

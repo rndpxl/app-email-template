@@ -1,0 +1,12 @@
+{{ shop.name }}
+{{ shop.url }}
+
+====================
+
+Account Confirmation
+
+{% if customer.name %}Dear {{ customer.name }},{% endif %}
+The next time you shop at {{ shop.name }}, you can save time at checkout by logging into your account. This will prefill your address information at the checkout.
+
+Thank you,
+{{ shop.name }}

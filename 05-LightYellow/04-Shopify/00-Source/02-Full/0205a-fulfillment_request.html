@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="format-detection" content="address=no;email=no;telephone=no" />
+<title>Order Fulfillment Request for {{ shop_name }}</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<div class="emailSummary">Order Fulfillment Request for {{ shop_name }}</div>
+<table id="emailBody" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top" class="emailBodyCell"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="eBox">
+        <tr>
+          <td class="eHeader_stretch">&nbsp;</td>
+          <td class="eHeader"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="eHeaderLogo"><a class="logo" href="{{ shop.url }}"><img class="imageFix" src="{{ 'logo.png' | asset_url }}" alt="{{ shop_name }}" height="48" /></a></td>
+                <!-- end .eHeaderLogo--> 
+              </tr>
+            </table></td>
+          <td class="eHeader_stretch">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="eBody_stretch">&nbsp;</td>
+          <td class="eBody alignLeft"><p>{{ service_name }},<br />
+              Please fulfill order {{ name }}.</p>
+            <p>Total number of items: {{ fulfillment.item_count }}</p>
+            <p>Unique items: {{ fulfillment.fulfillment_line_items.size }}</p></td>
+          <td class="eBody_stretch">&nbsp;</td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="highlight_stretch">&nbsp;</td>
+          <td class="highlight invoiceHead alignLeft"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr> {% if shipping_address %}
+                <td class="width246 pdRg16"><table border="0" cellpadding="0" cellspacing="0" class="tag">
+                    <tr>
+                      <td width="2" height="2"  align="left" valign="top" class="btnLfTp"><img src="images/tag_lftp.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/tag_rgtp.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="left" valign="middle" class="tagName">Shipping Address</td>
+                      <td class="emptyCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="bottom" class="btnLfBt"><img src="images/tag_lfbt.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="right" valign="bottom" class="btnRgBt"><img src="images/tag_rgbt.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                    </tr>
+                  </table>
+                  <p>{{ shipping_address.name }}<br />
+                    {% if shipping_address.company %}
+                    {{ shipping_address.company }}<br />
+                    {% endif %}
+                    {{ shipping_address.address1 }}<br />
+                    {% if shipping_address.address2 %} {{ shipping_address.address2 }}<br />
+                    {% endif %}
+                    {{ shipping_address.city }}, {{ shipping_address.province }}<br />
+                    {{ shipping_address.zip }}<br />
+                    {{ shipping_address.country }}<br />
+                    {% if shipping_address.phone %}Phone: {{ shipping_address.phone }}{% endif %}</p></td>
+                {% endif %}
+                <td class="width246"><table border="0" cellpadding="0" cellspacing="0" class="tag">
+                    <tr>
+                      <td width="2" height="2"  align="left" valign="top" class="btnLfTp"><img src="images/tag_lftp.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/tag_rgtp.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="left" valign="middle" class="tagName">Shipping Method</td>
+                      <td class="emptyCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="bottom" class="btnLfBt"><img src="images/tag_lfbt.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="right" valign="bottom" class="btnRgBt"><img src="images/tag_rgbt.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                    </tr>
+                  </table>
+                  <p>{% if shipping_method %}{{ shipping_method.title }}{% else %}None{% endif %}</p>
+                  <table border="0" cellpadding="0" cellspacing="0" class="tag">
+                    <tr>
+                      <td width="2" height="2"  align="left" valign="top" class="btnLfTp"><img src="images/tag_lftp.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/tag_rgtp.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="left" valign="middle" class="tagName">Tracking Number</td>
+                      <td class="emptyCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="bottom" class="btnLfBt"><img src="images/tag_lfbt.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="right" valign="bottom" class="btnRgBt"><img src="images/tag_rgbt.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                    </tr>
+                  </table>
+                  <p>{% if fulfillment.tracking_number %}{{ fulfillment.tracking_number }}{% else %}None{% endif %}</p>
+                  <table border="0" cellpadding="0" cellspacing="0" class="tag">
+                    <tr>
+                      <td width="2" height="2"  align="left" valign="top" class="btnLfTp"><img src="images/tag_lftp.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/tag_rgtp.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="left" valign="middle" class="tagName">Customer Email</td>
+                      <td class="emptyCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="bottom" class="btnLfBt"><img src="images/tag_lfbt.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="right" valign="bottom" class="btnRgBt"><img src="images/tag_rgbt.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                    </tr>
+                  </table>
+                  <p><a href="mailto:{{ email }}"><span>{{ email }}</span></a></p></td>
+              </tr>
+            </table></td>
+          <td class="highlight_stretch">&nbsp;</td>
+          <!-- end .highlight--> 
+        </tr>
+        <tr>
+          <td class="eBody_stretch">&nbsp;</td>
+          <td class="blank"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="invoiceTable2 bottomLine">
+              <tr>
+                <th colspan="2" class="alignLeft pdLf16">Item</th>
+                <th class="alignRight">SKU</th>
+              </tr>
+              {% for line in fulfillment.fulfillment_line_items %}
+              <tr>
+              <td class="alignLeft prodImg"><img src="{{ line.product.featured_image | product_img_url: 'small' }}" width="80" alt="{{ line.title }}" /></td>
+                <td class="alignLeft prodDesc pdLf16"><h4>{{ line.line_item.title }}</h4>
+                  Quantity: {{ line.quantity }}<br />
+                  Grams: {{ line.line_item.grams }}<br />
+                  Vendor: {{ line.line_item.vendor }} </td>
+                <td class="alignRight"><span class="desktopHide">SKU: </span>{{ line.line_item.sku }}</td>
+              </tr>
+              {% endfor %}
+            </table></td>
+          <td class="eBody_stretch">&nbsp;</td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="eBody_stretch">&nbsp;</td>
+          <td class="eBody alignLeft"><p>Thank you,<br />
+              {{ shop_name }}</p></td>
+          <td class="eBody_stretch">&nbsp;</td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="eBody_stretch">&nbsp;</td>
+          <td class="bottomCorners">&nbsp;</td>
+          <td class="eBody_stretch">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="eFooter_stretch">&nbsp;</td>
+          <td class="eFooter">© 2015 {{ shop.name }}. All Rights Reserved.</td>
+          <td class="eFooter_stretch">&nbsp;</td>
+        </tr>
+      </table>
+      
+      <!-- end .eBox --></td>
+    <!-- end .emailBodyCell --> 
+  </tr>
+</table>
+<!-- end #emailBody -->
+</body>
+</html>

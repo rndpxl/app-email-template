@@ -1,0 +1,23 @@
+{{ shop.name }}
+{{ shop.url }}
+
+====================
+
+Shipping update for order {{ name }}
+
+{% if billing_address.name %}Dear {{ billing_address.name }},
+{% endif %} The following shipped items from order {{ name }} have been updated with new shipping information:
+____________________{% for line in fulfillment.fulfillment_line_items %}
+
+* {{ line.line_item.title }}
+  Quantity: {{ line.quantity }}
+  Price: {{ line.price | money }}
+  Subtotal: {{ line.line_price | money }}
+____________________{% endfor %}
+
+They are being shipped{% if fulfillment.tracking_company %} via {{ fulfillment.tracking_company }}{% endif %} with tracking number {{ fulfillment.tracking_number }}.
+
+* Click the link to see the status of your shipment
+  {{ fulfillment.tracking_url }}
+  
+Please allow some time for the status of the shipment to correctly display at the above address.

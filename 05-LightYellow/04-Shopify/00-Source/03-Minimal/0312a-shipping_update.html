@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="format-detection" content="address=no;email=no;telephone=no" />
+<title>Shipping update for order {{ name }}</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<div class="emailSummary">Shipping update for order {{ name }}</div>
+<table id="emailBody" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top" class="emailBodyCell"><table width="544" border="0" cellpadding="0" cellspacing="0" class="eBox">
+        <tr>
+          <td class="eHeader"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="eHeaderLogo"><a class="logo" href="{{ shop.url }}"><img class="imageFix" src="{{ 'logo.png' | asset_url }}" alt="{{ shop_name }}" height="48" /></a></td>
+                <!-- end .eHeaderLogo--> 
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="emptyCell hBorder">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="highlight pdTp32 pdBt16"><h1><span>Shipping update for order {{ name }}</span></h1></td>
+          <!-- end .highlight--> 
+        </tr>
+        <tr>
+          <td class="eBody alignLeft"> {% if billing_address.name %}
+            <p>Dear {{ billing_address.name }},</p>
+            {% endif %}
+            <p>The following shipped items from order {{ name }} have been updated with new shipping information:</p></td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="blank"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="invoiceTable2 invoiceTable3 bottomLine">
+              <tr>
+                <th class="alignLeft pdLf16">Item</th>
+                <th class="alignRight">Subtotal</th>
+              </tr>
+              {% for line in fulfillment.fulfillment_line_items %}
+              <tr>
+                <td class="alignLeft prodDesc"><h4>{{ line.line_item.title }}</h4>
+                  Quantity: {{ line.line_item.quantity }}<br />
+                  Price: {{ line.line_item.price | money }} </td>
+                <td class="alignRight"><span class="desktopHide">Subtotal: </span><span class="amount">{{ line.line_item.line_price | money }}</span></td>
+              </tr>
+              {% endfor %}
+            </table></td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="eBody"><p>They are being shipped{% if fulfillment.tracking_company %} via {{ fulfillment.tracking_company }}{% endif %} with tracking number {{ fulfillment.tracking_number }}.</p>
+            <table border="0" cellpadding="0" cellspacing="0" class="defaultBtn">
+              <tr>
+                <td width="4" height="8"  align="left" valign="top" class="btnLfTp"><img src="images/mainBtn_lftp.png" width="4" height="4" /></td>
+                <td class="emptyCell">&nbsp;</td>
+                <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/mainBtn_rgtp.png" width="4" height="4" /></td>
+              </tr>
+              <tr>
+                <td class="emptyCell">&nbsp;</td>
+                <td class="btnMain"><a href="{{ fulfillment.tracking_url }}"><span>Click here to see the status of your shipment</span></a></td>
+                <td class="emptyCell">&nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="bottom" class="btnLfBt"><img src="images/mainBtn_lfbt.png" width="4" height="4" /></td>
+                <td class="emptyCell">&nbsp;</td>
+                <td align="right" valign="bottom" class="btnRgBt"><img src="images/mainBtn_rgbt.png" width="4" height="4" /></td>
+              </tr>
+            </table>
+            <p></p>
+            <p>Please allow some time for the status of the shipment to correctly display at the above address.</p></td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="emptyCell hBorder">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="eFooter">© 2015 {{ shop.name }}. All Rights Reserved.</td>
+        </tr>
+      </table>
+      
+      <!-- end .eBox --></td>
+    <!-- end .emailBodyCell --> 
+  </tr>
+</table>
+<!-- end #emailBody -->
+</body>
+</html>

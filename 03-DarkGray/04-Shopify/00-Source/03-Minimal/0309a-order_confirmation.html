@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="format-detection" content="address=no;email=no;telephone=no" />
+<title>Confirmation for order {{name}}</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<div class="emailSummary">Confirmation for order {{name}}</div>
+<table id="emailBody" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="center" valign="top" class="emailBodyCell"><table width="544" border="0" cellpadding="0" cellspacing="0" class="eBox">
+        <tr>
+          <td class="eHeader"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="eHeaderLogo"><a class="logo" href="{{ shop.url }}"><img class="imageFix" src="{{ 'logo.png' | asset_url }}" alt="{{ shop_name }}" height="48" /></a></td>
+                <!-- end .eHeaderLogo--> 
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td class="emptyCell hBorder">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="eBody alignLeft"><h1>Order Confirmation</h1>
+            <p>Thank you for placing your order with {{ shop_name }}!</p></td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="highlight invoiceHead alignLeft pdBt5"><h4>Order {{name}} <span>{{ date | date: "%m/%d/%Y" }}</span></h4></td>
+          <!-- end .highlight--> 
+        </tr>
+        <tr>
+          <td class="highlight invoiceHead alignLeft pdTp0"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                {% if requires_shipping and shipping_address %}
+                <td class="width246"><table border="0" cellpadding="0" cellspacing="0" class="tag">
+                    <tr>
+                      <td width="2" height="2"  align="left" valign="top" class="btnLfTp"><img src="images/tag_lftp.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/tag_rgtp.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="left" valign="middle" class="tagName">Shipping address</td>
+                      <td class="emptyCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="bottom" class="btnLfBt"><img src="images/tag_lfbt.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="right" valign="bottom" class="btnRgBt"><img src="images/tag_rgbt.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                    </tr>
+                  </table>
+                  <p>{{ shipping_address.name }}<br />
+                    {{ shipping_address.street }}<br />
+                    {{ shipping_address.city }}<br />
+                    {{ shipping_address.province }}
+                    {{ shipping_address.zip }}<br />
+                    {{ shipping_address.country }}</p></td>
+                {% endif %}               
+              {% if billing_address %}
+                <td class="width246 pdRg16"><table border="0" cellpadding="0" cellspacing="0" class="tag">
+                    <tr>
+                      <td width="2" height="2"  align="left" valign="top" class="btnLfTp"><img src="images/tag_lftp.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td width="4" height="8" align="right" valign="top" class="btnRgTp"><img src="images/tag_rgtp.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="left" valign="middle" class="tagName">Billing address</td>
+                      <td class="emptyCell">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="bottom" class="btnLfBt"><img src="images/tag_lfbt.png" width="2" height="2" /></td>
+                      <td class="emptyCell">&nbsp;</td>
+                      <td align="right" valign="bottom" class="btnRgBt"><img src="images/tag_rgbt.png" width="2" height="2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                      <td class="tag_space emptyCell">&nbsp;</td>
+                    </tr>
+                  </table>
+                  <p>{{ billing_address.name }}<br />
+                    {{ billing_address.street }}<br />
+                    {{ billing_address.city }}<br />
+                    {{ billing_address.province }}
+                    {{ billing_address.zip }}<br />
+                    {{ billing_address.country }}</p></td>
+                {% endif %}
+</tr>
+            </table></td>
+          <!-- end .highlight--> 
+        </tr>
+        <tr>
+          <td class="blank"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="invoiceTable2 bottomLine">
+              <tr>
+                <th colspan="2" class="alignLeft pdLf16">Item</th>
+                <th class="alignRight">Subtotal</th>
+              </tr>
+              {% for line in line_items %}
+              <tr>
+                <td class="alignLeft prodImg"><img src="{{ line.product.featured_image | product_img_url: 'small' }}" width="80" alt="{{ line.title }}" /></td>
+                <td class="alignLeft prodDesc"><h4>{{ line.title }}</h4>
+                  Quantity: {{ line.quantity }}<br />
+                  Price: {{ line.price | money }} </td>
+                <td class="alignRight"><span class="desktopHide">Subtotal: </span><span class="amount">{{ line.line_price | money }}</span></td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td colspan="2" class="subTotal alignRight mobileHide"> {% if discounts %}Discounts<br />
+                  {% endif %}
+                  Subtotal<br />
+                  {% for tax_line in tax_lines %}{{ tax_line.title }} {{tax_line.rate_percentage}}%<br />
+                  {% endfor %}
+                  {% if requires_shipping %}Shipping{% endif %}</td>
+                <td class="subTotal alignRight">{% if discounts %}<span class="desktopHide">Discounts: </span><span class="amount">{{ discounts_savings | money_with_currency  }}</span><br />
+                  {% endif %} <span class="desktopHide">Subtotal: </span><span class="amount">{{ subtotal_price | money_with_currency }}</span><br />
+                  {% for tax_line in tax_lines %}<span class="desktopHide">{{ tax_line.title }} {{tax_line.rate_percentage}}%</span> <span class="amount">{{tax_line.price | money_with_currency }}</span><br />
+                  {% endfor %}
+                  {% if requires_shipping %}<span class="desktopHide">Shipping: </span> <span class="amount">{{ shipping_price | money_with_currency }}</span> {% endif %}</td>
+              </tr>
+              <tr>
+                <td colspan="2" class="eTotal alignRight"><strong>Total</strong></td>
+                <td class="eTotal alignRight"><span class="amount">{{ total_price | money_with_currency }}</span></td>
+              </tr>
+            </table></td>
+          <!-- end .eBody--> 
+        </tr>
+        <tr>
+          <td class="emptyCell hBorder">&nbsp;</td>
+        </tr>
+        <tr>
+          <td class="eFooter">© 2015 {{ shop.name }}. All Rights Reserved.</td>
+        </tr>
+      </table>
+      
+      <!-- end .eBox --></td>
+    <!-- end .emailBodyCell --> 
+  </tr>
+</table>
+<!-- end #emailBody -->
+</body>
+</html>

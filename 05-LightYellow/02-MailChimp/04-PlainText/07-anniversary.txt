@@ -1,0 +1,30 @@
+
+*|LIST:COMPANY|*
+
+====================
+
+Happy 1-year anniversary!
+To celebrate, we have prepared something special just for you.
+____________________
+
+
+Hello John Klem,
+To show our appreciation for all the support we have recivied this past year, we are giving away a 1-month free subscription to all our long-term partners.
+
+* 1-month FREE subscription	
+  http://bit.ly/1yZ3CWY
+
+Best wishes, 
+The SimpleApp Team
+
+P.S. You can also re-gift your reward by using this form http://bit.ly/1yZ3CWY
+
+====================
+
+Notification Options
+*|UPDATE_PROFILE|*
+
+Unsubscribe - *|EMAIL|*
+*|UNSUB|*
+
+*|IF:REWARDS|* *|REWARDS|* *|END:IF|*

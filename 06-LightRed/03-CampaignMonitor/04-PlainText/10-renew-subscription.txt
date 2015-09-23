@@ -1,0 +1,71 @@
+
+SimpleApp
+
+====================
+
+Hello John Klem,
+We just wanted to let you know that your subscription is expiring soon.
+
+____________________
+
+Expires Mar 16 2015 
+Premium Subscription (12 months)
+
+Renew subscription	 
+http://bit.ly/1yZ3CWY
+
+____________________
+
+* Free
+  $0 /month
+  
+  - 2.500 subscribers
+
+  Switch to this plan
+  http://bit.ly/1yZ3CWY
+
+____________________
+
+* Basic
+  $100 /month
+
+  - 2.500 subscribers
+  - 2GB Storage
+
+  Switch to this plan
+  http://bit.ly/1yZ3CWY
+
+____________________
+
+* Premium
+  $300 /month
+
+  - 2.500 subscribers
+  - 2GB Storage
+  - Analytics Web Reports
+
+  Current (Plan Details)
+  http://bit.ly/1yZ3CWY
+
+____________________
+
+* Enterprise
+  $500 /month
+
+  - 2.500 subscribers
+  - 2GB Storage
+  - Analytics Web Reports
+  - Multiple Accounts
+
+  Switch to this plan
+  http://bit.ly/1yZ3CWY
+
+====================
+
+Notification Options
+*|UPDATE_PROFILE|*
+
+Unsubscribe - *|EMAIL|*
+*|UNSUB|*
+
+*|IF:REWARDS|* *|REWARDS|* *|END:IF|*

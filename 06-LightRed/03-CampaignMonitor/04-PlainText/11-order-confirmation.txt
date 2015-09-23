@@ -1,0 +1,64 @@
+
+SimpleApp
+
+====================
+
+Hello John Klem,
+Here is a summary of your recent order made on Mar 15, 2014. You can also view your order in the Purchases section of your account.
+
+* Order Details
+  http://bit.ly/1yZ3CWY
+
+* Purchases Overview
+  http://bit.ly/1yZ3CWY
+
+____________________
+
+* Client
+  Connie S. Smythe
+  Eisner Food Store
+  753 Lakeland Terrace
+  Southfield, MI 48075
+  USA
+
+* Payment Details
+  VISA -XXX-321
+
+* Total
+  $2,728
+
+____________________
+
+* MacBook Pro 13-inch: 2.5GHz
+  Suspendisse odio mi, feugiat et dictum sed, eleifend eget libero.
+  http://bit.ly/1yZ3CWY
+
+  Price: $600
+  Quantity: 2
+  Subtotal: $1,488
+____________________
+
+* SimpleApp Charity Cubcakes
+  Etiam facilisis nulla nec purus consectetur ut porta metus imperdiet.
+  http://bit.ly/1yZ3CWY
+
+  Price: $100
+  Quantity: 10
+  Subtotal: $1,240
+____________________
+
+Subtotal: $2,400
+____________________
+
+Total due by Sep 10, 2014
+$2,400
+
+====================
+
+Notification Options
+*|UPDATE_PROFILE|*
+
+Unsubscribe - *|EMAIL|*
+*|UNSUB|*
+
+*|IF:REWARDS|* *|REWARDS|* *|END:IF|*
